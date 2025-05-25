@@ -99,7 +99,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "npm install --legacy-peer-deps && vite build",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.js\"",
