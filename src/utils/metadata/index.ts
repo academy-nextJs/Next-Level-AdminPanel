@@ -1,19 +1,6 @@
-import { SessionProvider } from "next-auth/react";
-import QueryProvider from "@/utils/providers/providers";
-import { Providers } from "@/utils/providers/ProvidersHeroUi";
-import localFont from "next/font/local";
 import { Metadata } from "next";
-import "./globals.css";
-import { auth } from "@/services/auth";
-import image from "./../assets/BUTORENT.png";
 
-const vazirmatn = localFont({
-  src: "./../assets/fonts/Vazirmatn.ttf",
-  variable: "--font-vazirmatn",
-  display: "swap",
-});
-
-export const metadata: Metadata = {
+export const defaultMetadata: Metadata = {
   title: {
     default: "BUYORENT | خرید و اجاره املاک",
     template: "%s | BUYORENT",
@@ -34,10 +21,17 @@ export const metadata: Metadata = {
   authors: [{ name: "BUYORENT" }],
   creator: "BUYORENT",
   publisher: "BUYORENT",
- 
-
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://buyorent.ir"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "BUYORENT",
+    title: "BUYORENT | خرید و اجاره املاک",
     description:
       "سامانه خرید و اجاره املاک با بهترین قیمت‌ها و امکانات. خرید خانه، آپارتمان، ویلا و زمین در سراسر ایران",
     url: "https://buyorent.ir",
@@ -46,9 +40,9 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: image.src,
-        width: 1200,
-        height: 630,
+        url: "./../../assets/BUTORENT.png",
+        width: 800,
+        height: 600,
         alt: "BUYORENT",
       },
     ],
@@ -58,15 +52,6 @@ export const metadata: Metadata = {
     title: "BUYORENT | خرید و اجاره املاک",
     description:
       "سامانه خرید و اجاره املاک با بهترین قیمت‌ها و امکانات. خرید خانه، آپارتمان، ویلا و زمین در سراسر ایران",
-    images: [
-      {
-        url: image.src,
-        width: 1200,
-        height: 630,
-        alt: "BUYORENT",
-        
-      },
-    ],
   },
   robots: {
     index: true,
@@ -83,23 +68,3 @@ export const metadata: Metadata = {
     google: "google-site-verification-code",
   },
 };
-
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const session = await auth();
-
-  return (
-    <html lang="fa" dir="rtl">
-      <body className={vazirmatn.className}>
-        <SessionProvider session={session}>
-          <QueryProvider>
-            <Providers>{children}</Providers>
-          </QueryProvider>
-        </SessionProvider>
-      </body>
-    </html>
-  );
-}
