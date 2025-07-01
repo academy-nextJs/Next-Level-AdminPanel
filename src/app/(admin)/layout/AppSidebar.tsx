@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import logo from "./../../../assets/BUTORENT.png";
-import { FaHeart, FaPlusCircle } from "react-icons/fa";
+import { FaHeart, FaPlusCircle, FaUsersCog } from "react-icons/fa";
 import { IoPersonSharp } from "react-icons/io5";
 import { BiChevronDown } from "react-icons/bi";
 import { BsPcHorizontal } from "react-icons/bs";
@@ -24,34 +24,29 @@ const navItems: NavItem[] = [
   {
     icon: <TbHomeFilled />,
     name: "داشبورد",
-    path: "/buyer/dashboard",
+    path: "/admin/dashboard",
   },
 
   {
     icon: <IoPersonSharp />,
     name: "اطلاعات کاربری",
-    path: "/buyer/profile",
+    path: "/admin/profile",
   },
 
   {
     name: "مدیریت رزرو ها",
     icon: <FaPlusCircle />,
-    path: "/buyer/booking-management",
+    path: "/admin/booking-management",
   },
   {
-    name: "علاقه مندی ها",
-    icon: <FaHeart />,
-    path: "/buyer/favorites",
+    name: "مدیریت کاربران",
+    icon: <FaUsersCog />,
+    path: "/admin/favorites",
   },
   {
-    name: "پرداخت ها",
+    name: "مدیریت پرداخت ها",
     icon: <MdOutlinePayments />,
-    path: "/buyer/payments",
-  },
-  {
-    name: "اعلان ها",
-    icon: <MdNotificationsActive />,
-    path: "/buyer/announcements",
+    path: "/admin/payments",
   },
 ];
 
@@ -348,7 +343,7 @@ const AppSidebar: React.FC = () => {
           </div>
         </nav>
       </div>
-      <WalletCard />
+      {/* <WalletCard /> */}
     </aside>
   );
 };

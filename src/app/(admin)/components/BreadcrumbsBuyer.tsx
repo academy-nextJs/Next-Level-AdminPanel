@@ -11,14 +11,15 @@ const routeMap: { [key: string]: string } = {
   payments: "پرداخت‌ها",
   favorites: "علاقه‌مندی‌ها",
   "booking-management": "مدیریت رزرو",
-  announcements: "اعلان‌ها",
+  "user-management": "مدیریت کاربران",
+  "announcement-management": "مدیریت اعلانات",
 };
 
 export default function BuyerBreadcrumbs() {
   const pathname = usePathname();
   const paths = pathname.split("/").filter(Boolean);
 
-  const buyerIndex = paths.indexOf("buyer");
+  const buyerIndex = paths.indexOf("admin");
   if (buyerIndex !== -1) {
     paths.splice(buyerIndex, 1);
   }

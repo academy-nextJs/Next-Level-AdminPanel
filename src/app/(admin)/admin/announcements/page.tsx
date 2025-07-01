@@ -8,11 +8,11 @@ import { BsArrowUp } from "react-icons/bs";
 import { BsArrowDown } from "react-icons/bs";
 import { MdNotificationsActive } from "react-icons/md";
 import { PiSealWarningBold } from "react-icons/pi";
-import { confirm } from "@/components/common/ConfirmModal";
 import { FaPrint } from "react-icons/fa";
 import { FaFilePdf } from "react-icons/fa";
 import { FaFileExcel } from "react-icons/fa";
 import { useCustomTable } from "@/utils/hooks/useCustomTable";
+import { confirm } from "../../components/ConfirmModal";
 
 const filterOptions = [
   { key: "all", label: "همه" },
@@ -89,7 +89,7 @@ const initialData: Announcement[] = [
   },
 ];
 
-export default function AnnouncementsManagementBuyer() {
+export default function AnnouncementsManagementAdmin() {
   const [filter, setFilter] = useState("all");
   const [page, setPage] = useState(1);
 

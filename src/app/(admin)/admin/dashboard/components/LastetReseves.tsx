@@ -12,7 +12,7 @@ import { useCustomTable } from "@/utils/hooks/useCustomTable";
 import { useBookingWithHouses } from "@/services/Bookings/getBooking";
 import moment from "moment-jalaali";
 import Link from "next/link";
-import { BookingDataBuyer } from "@/app/(buyer)/buyer/booking-management/page";
+import { BookingDataBuyer } from "../../booking-management/page";
 export interface LastetResevesType {
   id: number;
   title: string;
@@ -175,7 +175,7 @@ export default function LastetReseves() {
           </span>
         </div>
         <Link
-          href="/buyer/booking-management"
+          href="/admin/booking-management"
           className=" text-sm md:text-lg font-bold  dark:text-amber-200 relative group transition-all duration-300 ease-in-out flex items-center gap-2"
         >
           مشاهده همه رزرو ها

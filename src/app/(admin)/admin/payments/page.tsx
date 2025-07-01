@@ -270,7 +270,7 @@ export default function PaymentManagement() {
             size={30}
           />
           <span className="text-amber-500 text-xl font-bold  dark:text-amber-200 pb-3 border-b-4 border-amber-500 relative group transition-all duration-300 ease-in-out">
-            لیست تراکنش های شما
+            لیست تراکنش ها
           </span>
         </div>
         <div className="flex items-center gap-2 w-1/3">
